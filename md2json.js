@@ -13,5 +13,8 @@ fs.readdir(mddir, function(err, file){
 	    });
 	};
     });
-    fs.writeFileSync(mddir + '/_data.json', JSON.stringify(stones));
+    fs.writeFileSync(
+	mddir + '/_data.json',
+	JSON.stringify(stones.sort(function(a, b){return 0.5 - Math.random();}))
+    );
 });
